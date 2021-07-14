@@ -15,7 +15,7 @@ public class GuessTheNumber {
 
         System.out.println("Hello, what is your name?");
              userName = userInput.nextLine();
-        System.out.println("Well, " + userName + ", I am thinking of a number between 1 and 20." + "\n" +
+        System.out.println("Well, " + userName + ", I am thinking of a number between 1 and 20..." + "\n" +
                 "Take a guess.");
              guess = userInput.nextInt();
 
