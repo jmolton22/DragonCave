@@ -22,23 +22,8 @@ public class HumansVSGoblins {
             System.out.println("LEVEL 1");
             System.out.println("There are three goblins on the map. " +
                                        "Use keys 'n e s w' to survey the area to find them before they find you.");
-            String move = keyboard.next();
-
-            switch(move){
-                case "n": System.out.println(player.getName()+", you are standing further north. " +
-                                                     "There are no goblins here.");
-                        break;
-                case "e": System.out.println(player.getName()+", you are standing further east. " +
-                                                     "There are no goblins here.");
-                        break;
-                case "s": System.out.println(player.getName()+", you are standing further south. " +
-                                                     "There are no goblins here.");
-                        break;
-                case "w": System.out.println(player.getName()+", you are standing further west. " +
-                                                     "There are no goblins here.");
-                         break;
-            }
-
+            String move =keyboard.next();
+            player.movePlayer(move);
             System.out.println("Congrats, " + player.getName() + ". You survived. Play next level? " +
                                        "(y or n)" );
             String ans = keyboard.next();
@@ -49,13 +34,42 @@ public class HumansVSGoblins {
             else{
                 System.out.println("Ending game...");
                 System.exit(0);
-            }
+            }}
 
             if(level ==2){
-                System.out.println("Level 2");
+                System.out.println("LEVEL 2");
+                System.out.println("There are five goblins on the map. " +
+                                           "Use keys 'n e s w' to survey the area to find them before they find you.");
+                String move = keyboard.next();
+                player.movePlayer(move);
+
+                System.out.println("Congrats, " + player.getName() + ". You survived. Play next level? " +
+                                           "(y or n)" );
+                String ans = keyboard.next();
+                if(ans.equalsIgnoreCase("y")){
+                    level++;
+                }
+
+                     else{
+                    System.out.println("Ending game...");
+                    System.exit(0);
+                }
             }
+
+            if(level == 3){
+                System.out.println("LEVEL 3");
+                System.out.println("There are ten goblins on the map. " +
+                                           "Use keys 'n e s w' to survey the area to find them before they find you.");
+                String move = keyboard.next();
+                player.movePlayer(move);
+
+                System.out.println("Congrats, " + player.getName() + ". You survived. You beat the goblins!");
+                System.out.println("Ending game...");
+                System.exit(0);
+                }
+
         }
     }
 
 
-}
+
